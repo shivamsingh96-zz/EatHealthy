@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='foodieApp'> <!-- ng-app = angular ki application ban rahi h.-->
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Foodie</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="main.css">
+		<!--for inserting google icons-->
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+		<script src="js/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.6.5/angular-route.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js" ></script>
+
+
+
+
+		<style>
+	   input.ng-invalid.ng-dirty {
+				border: 1px solid red;
+			}
+			/*  that dirty maane user ne kuch type kiya hua hai ek baar at least */
+
+		</style>
+	</head>
+	<body id="app">
+
+
+	<div ng-view></div>
+<!--  'ng-view' is a directive that we use to tell angular where we want to show our view inside-->
+
+	<div id="map" style="width:1000px;height:400px;background:yellow"></div>
+
+	<script>
+	function myMap() {
+	  var mapCanvas = document.getElementById("map");
+	  var mapOptions = {
+	    center: new google.maps.LatLng(51.5, -0.2), zoom: 10
+	  };
+	  var map = new google.maps.Map(mapCanvas, mapOptions);
+	}
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=f49c57e98c4345d68f3870313f4f73ac&callback=myMap"></script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
